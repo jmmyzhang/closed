@@ -3,6 +3,8 @@ target/
 .mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
+out/
+build/
 
 ### STS ###
 .apt_generated
@@ -13,8 +15,11 @@ target/
 .springBeans
 .sts4-cache
 
+### Logs ###
+*.log
+
 ### IntelliJ IDEA ###
-.idea
+.idea/
 *.iws
 *.iml
 *.ipr
@@ -31,3 +36,10 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### OS files ###
+.DS_Store
+Thumbs.db
+
+### Other ###
+*.swp
