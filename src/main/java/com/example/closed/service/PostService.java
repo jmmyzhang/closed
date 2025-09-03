@@ -32,7 +32,7 @@ public class PostService {
     }
 
     public List<Post> getPostsByUserId(UUID userId) {
-        return postRepository.findByUserId(userId);
+        return postRepository.findByUserUserId(userId);
     }
 
     public List<Post> getAllPosts() {
