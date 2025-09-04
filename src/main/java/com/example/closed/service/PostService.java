@@ -17,18 +17,10 @@ public class PostService {
     @Autowired
     private PostRepository postRepository;
 
-    @Autowired
-    private UserRepository userRepository;
-
-    public Post createPost(UUID userId, Post post) {
-        Optional<User> userOptional = userRepository.findById(userId);
-        if (userOptional.isPresent()) {
-            post.setUser(userOptional.get());
-            post.setCreatedAt(LocalDateTime.now());
-            return postRepository.save(post);
-        } else {
-            throw new RuntimeException("User not found: " + userId);
-        }
+    public Post createPost(User user, Post post) {
+        post.setUser(user);
+        post.setCreatedAt(LocalDateTime.now());
+        return postRepository.save(post);
     }
 
     public List<Post> getPostsByUserId(UUID userId) {
